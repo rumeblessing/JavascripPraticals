@@ -1,0 +1,128 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;700&family=Poppins&display=swap'); */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: black !important;
+    font-family: 'poppins', sans-serif;
+    font-weight: 400;
+  }
+  
+  .forms {
+    width: 300px;
+    /* margin: 20vh auto 0 auto; */
+    background: #09c372;
+    padding: 20px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+
+  .input_control label {
+    font-size: 15px;
+    justify-content: end !important;
+  }
+  
+  .input_control input {
+    border: 2px solid #f0f0f0;
+    font-size: 12px;
+    padding: 10px;
+    /* width: 70%; */
+  }
+  .submit{
+    font-size: 15px;
+    /* border-radius: 20px; */
+    border: solid 1px seagreen ;
+    padding: 10px; 
+    /* margin-left: 100px; */
+    background-color: black;
+    color: #09c372;
+  }
+  .submit:hover{
+    background-color: #09c372;
+    color: black;
+  }
+  .loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    transition: opacity 0.75s, visibility 0.75s;
+    opacity: 1; /* Initially set to 1 */
+    visibility: visible; /* Initially set to visible */
+}
+
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after {
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 20px solid aqua;
+    border-top-color: #09c372;
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+/* styling the planet page */
+.container {
+  margin-top: 20px; 
+  margin-bottom: 20px;
+  /* display: flex; */
+    justify-content: center; 
+    max-width: 800px;
+}
+#planetsTable {
+  width: 100%;
+  /* color: white; */
+}
+#planetsTable th {
+  background-color: #007bff;
+  color: #fff; 
+  font-weight: bold;
+  /* border: solid 3px black; */
+}
+
+
+#planetsTable tbody tr:nth-child(odd) {
+  background-color: #f8f9fa;
+  /* border: solid 3px black; */
+}
+
+/* Style for even rows in the table body */
+#planetsTable tbody tr:nth-child(even) {
+  background-color: #e9ecef; 
+  /* border: solid 1px black; */
+}
+
+
+
+/* Style for hover effect on table rows */
+/* #planetsTable tbody tr:hover {
+  background-color: #cce5ff;
+} */
+
+
+ 

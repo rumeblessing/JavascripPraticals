@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./formvalidation.css">
+    <link href="./js/sweetalert2/sweetalert2.css" rel="stylesheet">
+    </link>
+    <title>Employee Form Validation</title>
+</head>
+
+<body>
+    <div class="contaner">
+        <header class="head">
+            Employee Information
+        </header>
+        <div class="row">
+            <div class="col-6 partone">
+                <div class="row">
+                    <div class="col-6">
+                        <h5 class="card-title text-center photo mb-3">Photo</h5>
+                        <div>
+                            <img id="ImageViewer1" src="./images/istockphoto-1363092240-1024x1024.jpg"
+                                class="card-img-top mb-3" alt="...">
+                            <div class="card-body">
+                                <div class="input-group">
+                                    <input type="file" id="imageInput" class="form-control rounded" placeholder="Search"
+                                        aria-label="Search" aria-describedby="search-addon" />
+                                    <button type="button" onclick="saveAndDisplayImage('FirstImage')"
+                                        class="btn btn-outline" data-mdb-ripple-init>Browse</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <h5 class="card-title text-center photo mb-3">Section</h5>
+                        <div class="card" style="width: 18rem;">
+                            <img id="ImageViewer2" src="./images/istockphoto-183250304-1024x1024.jpg"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <div class="input-group mt-3">
+                                    <input type="file" id="SignatureFile" class="form-control rounded"
+                                        placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                                    <button type="button" class="btn btn-outline"
+                                        onclick="saveAndDisplayImage('SecondImage')"
+                                        data-mdb-ripple-init>Browse</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 parttwo">
+                <div class="input_control row g-3 align-items-center mb-3 mt-3">
+                    <div class="col-auto">
+                        <label for="inputPassword6" class="col-form-label">FirstName</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="text" id="firstname" class="form-control" aria-describedby="passwordHelpInline">
+                        <span class="error"></span>
+                    </div>
+
+                </div>
+                <div class="input_control row g-3 align-items-center mt-4 mb-3">
+                    <div class="col-auto">
+                        <label for="inputPassword6" class="col-form-label">LastName</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="text" id="lastname" class="form-control" aria-describedby="passwordHelpInline">
+                        <span class="error"></span>
+                    </div>
+
+                </div>
+                <div class="input_control row g-3 align-items-center mb-3 mt-3">
+                    <div class="col-auto">
+                        <label for="inputPassword6" class="col-form-label">Address</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="text" id="address" class="form-control" aria-describedby="passwordHelpInline">
+                        <span class="error"></span>
+                    </div>
+
+                </div>
+                <div class="input_control row g-3 align-items-center mb-3 mt-3">
+                    <div class="col-auto">
+                        <label for="inputPassword6" class="col-form-label">Email</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="email" id="email" class="form-control" aria-describedby="passwordHelpInline">
+                        <span class="error"></span>
+                    </div>
+
+                </div>
+                <div class="input_control row g-3 align-items-center mb-3 mt-3">
+                    <div class="col-auto">
+                        <label for="inputPassword6" class="col-form-label">Phone number</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="tel" id="phonenumber" class="form-control" aria-describedby="passwordHelpInline">
+                        <span class="error"></span>
+                    </div>
+
+                </div>
+                <div class="input_control row g-3 align-items-center mb-3 mt-3">
+                    <div class="col-auto">
+                        <label for="inputPassword6" class="col-form-label">DOB</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="date" id="dateofbirth" class="form-control" aria-describedby="passwordHelpInline">
+                        <!-- <span class="error"></span> -->
+                    </div>
+
+                </div>
+                <input id="entry" type="button" value="Save" class="save">
+                <input id="updateButton" type="button" value="Update" class="save">
+
+            </div>
+        </div>
+
+        <div class="input_control text-white fw-bold row g-3 align-items-center mt-2">
+            <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label searchlabel">Search</label>
+            </div>
+            <div class="col-auto">
+                <input id="searchText" type="text" placeholder="Search using phone number" class="search">
+            </div>
+
+        </div>
+
+
+
+        <div class="container mt-4">
+            <table id="display" class="table table-bordered table-hover table-striped">
+                <thead class="thead-dark bg-white text-primary">
+                    <tr>
+                        <th scope="col">FirstName</th>
+                        <th scope="col">LastName</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">DOB</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="./js/sweetalert2/sweetalert2.min.js"></script>
+    <script src="./formvalidation.js"></script>
+</body>
+
+</html>
